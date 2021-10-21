@@ -39,8 +39,8 @@ class SegmentSeekBar : AppCompatSeekBar {
         }
         val length =
             (width - paddingLeft - paddingRight - segmentsCount * segmentDividerWidth) / (segmentsCount + 1)
-        val rulerTop = height / 2 - minimumHeight / 2
-        val rulerBottom = rulerTop + minimumHeight
+        val rulerTop = height / 1.2 - minimumHeight / 2
+        val rulerBottom = rulerTop/ 1.4 + minimumHeight /2.9
         var thumbRect: Rect? = null
         if (thumb != null) {
             thumbRect = thumb.bounds

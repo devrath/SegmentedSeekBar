@@ -14,7 +14,7 @@ class MainActivity : AppCompatActivity() {
         progressBar.setMplSegmentStyle(
             segmentsList = prepareSections(),
             segmentDividerColor = ContextCompat.getColor(this, R.color.white) ,
-            segmentDividerWidth = 2
+            segmentDividerWidth = 15
         )
     }
 
