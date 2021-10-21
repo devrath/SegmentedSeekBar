@@ -11,6 +11,8 @@ import com.example.code.R
 class SeekBarFrame : FrameLayout {
 
     private var segmentPaint: Paint? = null
+    private var segmentDividerPaint: Paint? = null
+
 
 
     constructor(context: Context?) : super(context!!) { init(context) }
@@ -39,11 +41,23 @@ class SeekBarFrame : FrameLayout {
 
     private fun prepareSegmentPaint(context: Context) {
         segmentPaint = Paint()
+        segmentDividerPaint = Paint()
+
         segmentPaint?.apply {
             strokeWidth = 5F
             segmentPaint?.color = ContextCompat.getColor(context, R.color.green)
             //segmentPaint?.isAntiAlias = true
         }
+        segmentDividerPaint?.apply {
+            strokeWidth = 5F
+            segmentPaint?.color = ContextCompat.getColor(context, R.color.white)
+            //segmentPaint?.isAntiAlias = true
+        }
+
+    }
+
+
+    fun setSectionDivider(prepareSections: List<SegmentFrame>) {
 
     }
 
