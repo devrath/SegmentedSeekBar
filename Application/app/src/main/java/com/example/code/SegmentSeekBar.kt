@@ -10,10 +10,10 @@ import androidx.appcompat.widget.AppCompatSeekBar
 import kotlin.jvm.Synchronized
 
 class SegmentSeekBar : AppCompatSeekBar {
-    private var mRulerPaint: Paint? = null
-    private var mRulerCount = 4
-    private var mRulerWidth = 2
-    private var mRulerColor = Color.WHITE
+    private var segmentDividerPaint: Paint? = null
+    private var segmentsCount = 0
+    private var segmentDividerWidth = 3
+    private var segmentDividerColor = Color.WHITE
     private var isShowTopOfThumb = false
 
     constructor(context: Context?) : super(context!!) { init() }
@@ -25,29 +25,29 @@ class SegmentSeekBar : AppCompatSeekBar {
     ) { init() }
 
     private fun init() {
-        mRulerPaint = Paint()
-        mRulerPaint?.color = mRulerColor
-        mRulerPaint?.isAntiAlias = true
+        segmentDividerPaint = Paint()
+        segmentDividerPaint?.color = segmentDividerColor
+        segmentDividerPaint?.isAntiAlias = true
         splitTrack = false
     }
 
     @Synchronized
     override fun onDraw(canvas: Canvas) {
         super.onDraw(canvas)
-        if (width <= 0 || mRulerCount <= 0) {
+        if (width <= 0 || segmentsCount <= 0) {
             return
         }
         val length =
-            (width - paddingLeft - paddingRight - mRulerCount * mRulerWidth) / (mRulerCount + 1)
+            (width - paddingLeft - paddingRight - segmentsCount * segmentDividerWidth) / (segmentsCount + 1)
         val rulerTop = height / 2 - minimumHeight / 2
         val rulerBottom = rulerTop + minimumHeight
         var thumbRect: Rect? = null
         if (thumb != null) {
             thumbRect = thumb.bounds
         }
-        for (i in 1..mRulerCount) {
+        for (i in 1..segmentsCount) {
             val rulerLeft = i * length + paddingLeft
-            val rulerRight = rulerLeft + mRulerWidth
+            val rulerRight = rulerLeft + segmentDividerWidth
             if (!isShowTopOfThumb && thumbRect != null && rulerLeft - paddingLeft > thumbRect.left && rulerRight - paddingLeft < thumbRect.right) {
                 continue
             }
@@ -56,31 +56,40 @@ class SegmentSeekBar : AppCompatSeekBar {
                 rulerTop.toFloat(),
                 rulerRight.toFloat(),
                 rulerBottom.toFloat(),
-                mRulerPaint!!
+                segmentDividerPaint!!
             )
         }
     }
 
-    fun setRulerCount(mRulerCount: Int) {
-        this.mRulerCount = mRulerCount
-        requestLayout()
-    }
-
-    fun setRulerWidth(mRulerWidth: Int) {
-        this.mRulerWidth = mRulerWidth
-        requestLayout()
-    }
-
-    fun setRulerColor(mRulerColor: Int) {
-        this.mRulerColor = mRulerColor
-        if (mRulerPaint != null) {
-            mRulerPaint?.color = mRulerColor
-            requestLayout()
-        }
-    }
 
     fun setShowTopOfThumb(isShowTopOfThumb: Boolean) {
         this.isShowTopOfThumb = isShowTopOfThumb
         requestLayout()
     }
+
+    fun setMplSegmentStyle(segmentsList: List<Segment>,
+                           segmentDividerColor:Int,segmentDividerWidth: Int
+    ) {
+        setSegmentsCount(segmentsList.size)
+        setSegmentDividerColor(segmentDividerColor)
+        setSegmentDividerWidth(segmentDividerWidth)
+        requestLayout()
+    }
+
+    private fun setSegmentsCount(mRulerCount: Int) {
+        this.segmentsCount = mRulerCount
+    }
+
+    private fun setSegmentDividerColor(segmentDividerColor: Int) {
+        this.segmentDividerColor = segmentDividerColor
+        if (segmentDividerPaint != null) {
+            segmentDividerPaint?.color = segmentDividerColor
+        }
+    }
+
+    private fun setSegmentDividerWidth(segmentDividerWidth: Int) {
+        this.segmentDividerWidth = segmentDividerWidth
+    }
+
+
 }

@@ -4,7 +4,7 @@ import android.graphics.*
 import android.graphics.drawable.Drawable
 
 class ProgressBarDrawable(
-    sectionsList: List<Section>,
+    sectionsList: List<Segment>,
     private val seekPlayedColor: Int, private val seekUnPlayedColor: Int
 ) : Drawable() {
 

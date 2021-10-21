@@ -3,8 +3,6 @@ package com.example.code
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
-import android.widget.ProgressBar
-import androidx.appcompat.widget.AppCompatSeekBar
 import androidx.core.content.ContextCompat
 
 class MainActivity : AppCompatActivity() {
@@ -12,14 +10,18 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-
-
+        val progressBar: SegmentSeekBar = findViewById<View>(R.id.seek_bar) as SegmentSeekBar
+        progressBar.setMplSegmentStyle(
+            segmentsList = prepareSections(),
+            segmentDividerColor = ContextCompat.getColor(this, R.color.white) ,
+            segmentDividerWidth = 2
+        )
     }
 
-    private fun prepareSections(): List<Section> {
+    private fun prepareSections(): List<Segment> {
         return listOf(
-            Section(1),Section(2),Section(3),
-            Section(4)
+            Segment(1),Segment(2),Segment(3),
+            Segment(4), Segment(5)
         )
     }
 }
