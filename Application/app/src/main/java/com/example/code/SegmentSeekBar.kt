@@ -61,12 +61,6 @@ class SegmentSeekBar : AppCompatSeekBar {
         }
     }
 
-
-    fun setShowTopOfThumb(isShowTopOfThumb: Boolean) {
-        this.isShowTopOfThumb = isShowTopOfThumb
-        requestLayout()
-    }
-
     fun setMplSegmentStyle(segmentsList: List<Segment>,
                            segmentDividerColor:Int,segmentDividerWidth: Int
     ) {
