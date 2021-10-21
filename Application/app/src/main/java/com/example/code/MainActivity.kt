@@ -20,8 +20,10 @@ class MainActivity : AppCompatActivity() {
 
     private fun prepareSections(): List<Segment> {
         return listOf(
-            Segment(2),Segment(2),Segment(2),
-            Segment(4)
+            Segment(20, 0.0F),
+            Segment(30,0.0F),
+            Segment(40,0.0F),
+            Segment(10,0.0F)
         )
     }
 }

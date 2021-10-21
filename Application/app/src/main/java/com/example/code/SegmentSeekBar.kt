@@ -16,13 +16,15 @@ class SegmentSeekBar : AppCompatSeekBar {
     private var segmentDividerColor = Color.WHITE
     private var isShowTopOfThumb = false
 
+    private var totalLengthSpan = 0
+
+
     constructor(context: Context?) : super(context!!) { init() }
-
     constructor(context: Context?, attrs: AttributeSet?) : super(context!!, attrs) { init() }
-
     constructor(context: Context?, attrs: AttributeSet?, defStyleAttr: Int) : super(
         context!!, attrs, defStyleAttr
     ) { init() }
+
 
     private fun init() {
         segmentDividerPaint = Paint()
@@ -76,9 +78,23 @@ class SegmentSeekBar : AppCompatSeekBar {
                            segmentDividerColor:Int,segmentDividerWidth: Int
     ) {
         setSegmentsCount(segmentsList.size)
+        setTotalLengthSpan(segmentsList)
+        setIndividualSpansInPercentage(segmentsList)
         setSegmentDividerColor(segmentDividerColor)
         setSegmentDividerWidth(segmentDividerWidth)
         requestLayout()
+    }
+
+    private fun setTotalLengthSpan(segmentsList: List<Segment>) {
+        var sum = 0
+        for(segment in segmentsList){ sum += segment.curSegmentDurationSpan }
+        totalLengthSpan = sum
+    }
+
+    private fun setIndividualSpansInPercentage(segmentsList: List<Segment>) {
+        for(segment in segmentsList) {
+            ((segment.curSegmentDurationSpan / totalLengthSpan) * 100);
+        }
     }
 
     private fun setSegmentsCount(mRulerCount: Int) { this.segmentsCount = mRulerCount }

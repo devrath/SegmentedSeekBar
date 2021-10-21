@@ -1,3 +1,3 @@
 package com.example.code
 
-data class Segment(val duration:Int)
+data class Segment(var curSegmentDurationSpan:Int,var curSegmentDurationInPercent:Float)
