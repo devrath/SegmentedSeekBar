@@ -9,11 +9,11 @@ import com.example.code.R
 class CustomSeekBarActivity : AppCompatActivity() {
 
     private var seekbar: CustomSeekBar? = null
-    private val totalSpan = 1500f
-    private val redSpan = 200f
-    private val blueSpan = 300f
-    private val greenSpan = 400f
-    private val yellowSpan = 150f
+    private val totalSpan = 100f
+    private val redSpan = 40f
+    private val blueSpan = 20f
+    private val greenSpan = 30f
+    private val yellowSpan = 10f
     private val darkGreySpan = 0f
 
     private var progressItemList: ArrayList<ProgressItem>? = null

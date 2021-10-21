@@ -8,9 +8,11 @@
         android:id="@+id/customSeekBar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:max="100"
-        android:progress="0"
-        android:progressDrawable="@android:color/transparent"
-        android:thumbOffset="12dp" />
+        android:progressBackgroundTint="@color/gb_seek_bar_unplayed"
+        android:progressTint="@color/gb_seek_bar_played"
+        android:secondaryProgressTint="@color/gb_seek_bar_buffer"
+        android:thumbTint="@color/gb_seek_bar_played"
+        android:layout_marginLeft="16dp"
+        android:layout_marginRight="16dp"/>
 
 </LinearLayout>
