@@ -14,8 +14,8 @@ class MainActivity : AppCompatActivity() {
 
         val progressBar: ProgressBar = findViewById<View>(R.id.progress_bar_test) as AppCompatSeekBar
         val bgProgress = ProgressBarDrawableTwo(
-            ContextCompat.getColor(this, R.color.purple_700),
-            ContextCompat.getColor(this, R.color.teal_200)
+            ContextCompat.getColor(this, R.color.gb_seek_bar_played),
+            ContextCompat.getColor(this, R.color.gb_seek_bar_unplayed)
         )
 
         progressBar.progressDrawable = bgProgress

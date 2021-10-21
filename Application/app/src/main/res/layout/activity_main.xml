@@ -12,6 +12,10 @@
         android:id="@+id/progress_bar_test"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:progressBackgroundTint="@color/gb_seek_bar_unplayed"
+        android:progressTint="@color/gb_seek_bar_played"
+        android:secondaryProgressTint="@color/gb_seek_bar_buffer"
+        android:thumbTint="@color/gb_seek_bar_played"
         android:layout_marginLeft="16dp"
         android:layout_marginRight="16dp" />
 

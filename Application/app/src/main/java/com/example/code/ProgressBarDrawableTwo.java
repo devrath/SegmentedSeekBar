@@ -30,9 +30,9 @@ public class ProgressBarDrawableTwo extends Drawable {
     public void draw(Canvas canvas) {
         float level = getLevel() / 10000f;
         Rect b = getBounds();
-        float gapWidth = b.height() / 2f;
+        float gapWidth = b.height() / 4f;
         float segmentWidth = (b.width() - (NUM_SEGMENTS - 1) * gapWidth) / NUM_SEGMENTS;
-        mSegment.set(0, 0, segmentWidth, b.height());
+        mSegment.set(0, 0, segmentWidth, 10);
         mPaint.setColor(mForeground);
 
         for (int i = 0; i < NUM_SEGMENTS; i++) {
