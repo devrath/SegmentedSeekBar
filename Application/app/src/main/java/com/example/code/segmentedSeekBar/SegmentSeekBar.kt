@@ -1,4 +1,4 @@
-package com.example.code
+package com.example.code.segmentedSeekBar
 
 import android.content.Context
 import android.graphics.Canvas
@@ -7,6 +7,7 @@ import android.graphics.Paint
 import android.graphics.Rect
 import android.util.AttributeSet
 import androidx.appcompat.widget.AppCompatSeekBar
+import com.example.code.segmentedSeekBar.Segment
 import kotlin.jvm.Synchronized
 
 class SegmentSeekBar : AppCompatSeekBar {
@@ -91,7 +92,7 @@ class SegmentSeekBar : AppCompatSeekBar {
     }
 
     fun setMplSegmentStyle(segmentsList: List<Segment>,
-                           segmentDividerColor:Int,segmentDividerWidth: Int
+                           segmentDividerColor:Int, segmentDividerWidth: Int
     ) {
         this.segmentsCount = segmentsList.size
         this.segmentDividerWidth = segmentDividerWidth

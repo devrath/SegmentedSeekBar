@@ -1,4 +1,4 @@
-package com.example.code
+package com.example.code.customSeekBar
 
 import android.content.Context
 import android.graphics.Canvas
@@ -6,7 +6,6 @@ import android.graphics.Paint
 import android.graphics.Rect
 import android.util.AttributeSet
 import androidx.appcompat.widget.AppCompatSeekBar
-import com.example.code.ProgressItem
 import java.util.ArrayList
 import kotlin.jvm.Synchronized
 

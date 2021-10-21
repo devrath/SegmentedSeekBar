@@ -1,4 +1,4 @@
-package com.example.code;
+package com.example.code.segmentedSeekBar;
 
 import android.content.Context;
 import android.graphics.Canvas;

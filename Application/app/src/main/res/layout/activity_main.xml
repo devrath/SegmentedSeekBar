@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:gravity="center"
     android:background="@color/screen_background"
-    tools:context=".MainActivity">
+    tools:context=".segmentedSeekBar.MainActivity">
 
     <androidx.appcompat.widget.AppCompatSeekBar
         android:id="@+id/progress_bar_test"
@@ -20,7 +20,7 @@
         android:layout_marginRight="16dp"
         android:visibility="gone"/>
 
-    <com.example.code.SegmentSeekBar
+    <com.example.code.segmentedSeekBar.SegmentSeekBar
         android:id="@+id/seek_bar"
         style="@style/Widget.AppCompat.ProgressBar.Horizontal"
         android:layout_width="match_parent"
