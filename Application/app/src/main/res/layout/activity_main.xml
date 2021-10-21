@@ -17,6 +17,6 @@
         android:secondaryProgressTint="@color/gb_seek_bar_buffer"
         android:thumbTint="@color/gb_seek_bar_played"
         android:layout_marginLeft="16dp"
-        android:layout_marginRight="16dp" />
+        android:layout_marginRight="16dp"/>
 
 </androidx.appcompat.widget.LinearLayoutCompat>

@@ -5,7 +5,7 @@ import android.graphics.drawable.Drawable
 
 class ProgressBarDrawable(
     sectionsList: List<Section>,
-    private val seekPlayed: Int, private val seekUnPlayed: Int
+    private val seekPlayedColor: Int, private val seekUnPlayedColor: Int
 ) : Drawable() {
 
     companion object {
@@ -33,14 +33,14 @@ class ProgressBarDrawable(
         val gapWidth = b.height() / 4f
         val segmentWidth = (b.width() - (numOfSegments - 1) * gapWidth) / numOfSegments
         mSegment[0f, 0f, segmentWidth] = 10f
-        mPaint.color = seekPlayed
+        mPaint.color = seekPlayedColor
         for (i in 0 until numOfSegments) {
             val loLevel = i / numOfSegments.toFloat()
             val hiLevel = (i + 1) / numOfSegments.toFloat()
             if (level in loLevel..hiLevel) {
                 val middle = mSegment.left + numOfSegments * segmentWidth * (level - loLevel)
                 canvas.drawRect(mSegment.left, mSegment.top, middle, mSegment.bottom, mPaint)
-                mPaint.color = seekUnPlayed
+                mPaint.color = seekUnPlayedColor
                 canvas.drawRect(middle, mSegment.top, mSegment.right, mSegment.bottom, mPaint)
             } else {
                 canvas.drawRect(mSegment, mPaint)
