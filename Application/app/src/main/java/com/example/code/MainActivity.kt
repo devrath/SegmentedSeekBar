@@ -5,6 +5,7 @@ import android.os.Bundle
 import android.view.View
 import android.widget.ProgressBar
 import androidx.appcompat.widget.AppCompatSeekBar
+import androidx.core.content.ContextCompat
 
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -12,7 +13,11 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
 
         val progressBar: ProgressBar = findViewById<View>(R.id.progress_bar_test) as AppCompatSeekBar
-        val bgProgress = ProgressBarDrawable(prepareSections())
+        val bgProgress = ProgressBarDrawableTwo(
+            ContextCompat.getColor(this, R.color.purple_700),
+            ContextCompat.getColor(this, R.color.teal_200)
+        )
+
         progressBar.progressDrawable = bgProgress
     }
 

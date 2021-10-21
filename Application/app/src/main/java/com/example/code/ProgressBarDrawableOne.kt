@@ -4,7 +4,7 @@ import android.graphics.*
 import android.graphics.drawable.Drawable
 import java.util.ArrayList
 
-class ProgressBarDrawable(sectionsList: List<Section>) : Drawable() {
+class ProgressBarDrawableOne(sectionsList: List<Section>) : Drawable() {
 
 
 
