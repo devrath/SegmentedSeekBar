@@ -3,7 +3,7 @@ package com.example.code
 import android.graphics.*
 import android.graphics.drawable.Drawable
 
-class ProgressBarDrawableTwo(
+class ProgressBarDrawable(
     sectionsList: List<Section>,
     private val seekPlayed: Int, private val seekUnPlayed: Int
 ) : Drawable() {
@@ -20,7 +20,7 @@ class ProgressBarDrawableTwo(
     init {
         numOfSegments = sectionsList.size
     }
-    
+
 
     override fun onLevelChange(level: Int): Boolean {
         invalidateSelf()
