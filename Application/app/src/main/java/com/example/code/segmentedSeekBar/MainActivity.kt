@@ -3,6 +3,7 @@ package com.example.code.segmentedSeekBar
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
+import androidx.appcompat.widget.AppCompatSeekBar
 import androidx.core.content.ContextCompat
 import com.example.code.R
 
@@ -11,12 +12,8 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        val progressBar: SegmentSeekBar = findViewById<View>(R.id.seek_bar) as SegmentSeekBar
-        progressBar.setMplSegmentStyle(
-            segmentsList = prepareSections(),
-            segmentDividerColor = ContextCompat.getColor(this, R.color.white) ,
-            segmentDividerWidth = 15
-        )
+        val progressBar: AppCompatSeekBar = findViewById<View>(R.id.seek_bar) as AppCompatSeekBar
+
     }
 
     private fun prepareSections(): List<Segment> {
