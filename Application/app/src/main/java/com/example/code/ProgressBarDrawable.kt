@@ -14,6 +14,7 @@ class ProgressBarDrawable(sectionsList: List<Section>) : Drawable() {
     private val emptyColor = Color.parseColor("#233952")
     private val separatorColor = Color.parseColor("#FFFFFF")
     private var separators: MutableList<RectF>? = null
+
     override fun onLevelChange(level: Int): Boolean {
         invalidateSelf()
         return true
