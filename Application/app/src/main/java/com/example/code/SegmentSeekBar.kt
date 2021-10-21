@@ -36,37 +36,30 @@ class SegmentSeekBar : AppCompatSeekBar {
     @Synchronized
     override fun onDraw(canvas: Canvas) {
         super.onDraw(canvas)
-
-        if (width <= 0 || segmentsCount <= 0) { return }
-
-        val length =
-            (width - paddingLeft - paddingRight - segmentsCount * segmentDividerWidth) / (segmentsCount + 1)
-        val rulerTop = height / 1.2 - minimumHeight / 2
-        val rulerBottom = rulerTop/ 1.4 + minimumHeight /2.9
-
-        var thumbRect: Rect? = null
-        if (thumb != null) {
-            thumbRect = thumb.bounds
-        }
-
-        drawSegments(length, thumbRect, canvas, rulerTop, rulerBottom)
+        if (width <= 0 || segmentsCount <= 0) { return
+        }else { drawSegments(canvas) }
     }
 
     private fun drawSegments(
-        length: Int,
-        thumbRect: Rect?,
-        canvas: Canvas,
-        rulerTop: Double,
-        rulerBottom: Double
+        canvas: Canvas
     ) {
+        val thumbRect = prepareThumbRect()
+        val rulerTop = height / 1.2 - minimumHeight / 2
+        val rulerBottom = rulerTop/ 1.4 + minimumHeight /2.9
+
         for (i in 1..segmentsCount) {
+
+            val length =
+                (width - paddingLeft - paddingRight - segmentsCount * segmentDividerWidth) / (segmentsCount + 1)
+
+
             val rulerLeft = i * length + paddingLeft
             val rulerRight = rulerLeft + segmentDividerWidth
             if (!isShowTopOfThumb &&
-                thumbRect != null &&
                 rulerLeft - paddingLeft > thumbRect.left &&
                 rulerRight - paddingLeft < thumbRect.right
             ) { continue }
+
             canvas.drawRect(
                 rulerLeft.toFloat(), rulerTop.toFloat(), rulerRight.toFloat(),
                 rulerBottom.toFloat(), segmentDividerPaint!!
@@ -74,15 +67,8 @@ class SegmentSeekBar : AppCompatSeekBar {
         }
     }
 
-    fun setMplSegmentStyle(segmentsList: List<Segment>,
-                           segmentDividerColor:Int,segmentDividerWidth: Int
-    ) {
-        setSegmentsCount(segmentsList.size)
-        setTotalLengthSpan(segmentsList)
-        setIndividualSpansInPercentage(segmentsList)
-        setSegmentDividerColor(segmentDividerColor)
-        setSegmentDividerWidth(segmentDividerWidth)
-        requestLayout()
+    private fun prepareThumbRect(): Rect {
+        return thumb.bounds
     }
 
     private fun setTotalLengthSpan(segmentsList: List<Segment>) {
@@ -97,8 +83,6 @@ class SegmentSeekBar : AppCompatSeekBar {
         }
     }
 
-    private fun setSegmentsCount(mRulerCount: Int) { this.segmentsCount = mRulerCount }
-
     private fun setSegmentDividerColor(segmentDividerColor: Int) {
         this.segmentDividerColor = segmentDividerColor
         if (segmentDividerPaint != null) {
@@ -106,9 +90,14 @@ class SegmentSeekBar : AppCompatSeekBar {
         }
     }
 
-    private fun setSegmentDividerWidth(segmentDividerWidth: Int) {
+    fun setMplSegmentStyle(segmentsList: List<Segment>,
+                           segmentDividerColor:Int,segmentDividerWidth: Int
+    ) {
+        this.segmentsCount = segmentsList.size
         this.segmentDividerWidth = segmentDividerWidth
+        setTotalLengthSpan(segmentsList)
+        setIndividualSpansInPercentage(segmentsList)
+        setSegmentDividerColor(segmentDividerColor)
+        requestLayout()
     }
-
-
 }
