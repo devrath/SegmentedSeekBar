@@ -48,15 +48,16 @@ class SegmentSeekBar : AppCompatSeekBar {
         for (i in 1..segmentsCount) {
             val rulerLeft = i * length + paddingLeft
             val rulerRight = rulerLeft + segmentDividerWidth
-            if (!isShowTopOfThumb && thumbRect != null && rulerLeft - paddingLeft > thumbRect.left && rulerRight - paddingLeft < thumbRect.right) {
+            if (!isShowTopOfThumb &&
+                thumbRect != null &&
+                rulerLeft - paddingLeft > thumbRect.left &&
+                rulerRight - paddingLeft < thumbRect.right) {
+
                 continue
+
             }
-            canvas.drawRect(
-                rulerLeft.toFloat(),
-                rulerTop.toFloat(),
-                rulerRight.toFloat(),
-                rulerBottom.toFloat(),
-                segmentDividerPaint!!
+            canvas.drawRect(rulerLeft.toFloat(), rulerTop.toFloat(), rulerRight.toFloat(),
+                rulerBottom.toFloat(), segmentDividerPaint!!
             )
         }
     }
