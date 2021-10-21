@@ -34,17 +34,19 @@ class SegmentSeekBar : AppCompatSeekBar {
     @Synchronized
     override fun onDraw(canvas: Canvas) {
         super.onDraw(canvas)
-        if (width <= 0 || segmentsCount <= 0) {
-            return
-        }
+
+        if (width <= 0 || segmentsCount <= 0) { return }
+
         val length =
             (width - paddingLeft - paddingRight - segmentsCount * segmentDividerWidth) / (segmentsCount + 1)
         val rulerTop = height / 1.2 - minimumHeight / 2
         val rulerBottom = rulerTop/ 1.4 + minimumHeight /2.9
+
         var thumbRect: Rect? = null
         if (thumb != null) {
             thumbRect = thumb.bounds
         }
+
         for (i in 1..segmentsCount) {
             val rulerLeft = i * length + paddingLeft
             val rulerRight = rulerLeft + segmentDividerWidth
@@ -71,9 +73,7 @@ class SegmentSeekBar : AppCompatSeekBar {
         requestLayout()
     }
 
-    private fun setSegmentsCount(mRulerCount: Int) {
-        this.segmentsCount = mRulerCount
-    }
+    private fun setSegmentsCount(mRulerCount: Int) { this.segmentsCount = mRulerCount }
 
     private fun setSegmentDividerColor(segmentDividerColor: Int) {
         this.segmentDividerColor = segmentDividerColor
