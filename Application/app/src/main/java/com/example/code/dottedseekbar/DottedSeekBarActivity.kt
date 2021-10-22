@@ -16,7 +16,7 @@ class DottedSeekBarActivity : AppCompatActivity() {
         val videoProgress = findViewById<View>(R.id.videoProgress) as DottedSeekBar
         val dots = intArrayOf(20, 30, 60, 90, 100)
         videoProgress.setDots(dots)
-        videoProgress.setDotsDrawable(R.drawable.dot)
+        videoProgress.setDotsDrawable(R.drawable.divider)
         videoProgress.setPadding(0, 0, 0, 0)
     }
 }
