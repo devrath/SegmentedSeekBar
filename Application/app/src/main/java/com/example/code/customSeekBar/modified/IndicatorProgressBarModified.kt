@@ -1,38 +1,39 @@
-package com.example.code.customSeekBar
+package com.example.code.customSeekBar.modified
 
 import android.content.Context
 import android.graphics.Canvas
-import android.graphics.Color
 import android.graphics.Paint
 import android.graphics.RectF
 import android.os.Bundle
 import android.os.Parcelable
 import android.util.AttributeSet
-import android.util.Log
-import android.view.MotionEvent
-import android.view.View
+import androidx.appcompat.widget.AppCompatSeekBar
+import androidx.core.content.ContextCompat
 import com.example.code.R
-import java.util.Collections.max
-import kotlin.math.max
-import kotlin.math.min
+class IndicatorProgressBarModified : AppCompatSeekBar {
+    lateinit var indicatorPositions: List<Float>
 
-class IndicatorProgressBar(context: Context, attrs: AttributeSet) : View(context, attrs) {
-    private val TAG = "IndicatorProgressBar"
-
-    private var barColor = Color.GRAY
+    /******************** eee **********************************/
+    private var barColor = ContextCompat.getColor(context, R.color.gb_seek_bar_unplayed)
     private var barHeight = 25F
-    private var indicatorColor = Color.CYAN
-    private var progressColor = Color.GREEN
+    private var indicatorColor = ContextCompat.getColor(context, R.color.gb_seek_bar_played)
+    private var progressColor = ContextCompat.getColor(context, R.color.gb_seek_bar_played)
     private val paint = Paint()
 
-    lateinit var indicatorPositions: List<Float>
+
+    constructor(context: Context?) : super(context!!)
+    constructor(context: Context?, attrs: AttributeSet?) : super(context!!, attrs) { initilize(attrs) }
+    constructor(context: Context?, attrs: AttributeSet?, defStyle: Int)
+            : super(context!!, attrs, defStyle) { initilize(attrs) }
+
+
     var progress = 0F // From float from 0 to 1
         set(state) {
             field = state
             invalidate()
         }
 
-    init {
+    fun initilize(attrs: AttributeSet?) {
         paint.isAntiAlias = true
         setupAttributes(attrs)
     }
@@ -46,10 +47,14 @@ class IndicatorProgressBar(context: Context, attrs: AttributeSet) : View(context
             barHeight = getFloat(R.styleable.IndicatorProgressBar_barHeight, barHeight)
             progress = getFloat(R.styleable.IndicatorProgressBar_progress, progress)
             progressColor = getColor(R.styleable.IndicatorProgressBar_progressColor, progressColor)
-            indicatorColor =
-                getColor(R.styleable.IndicatorProgressBar_indicatorColor, indicatorColor)
+            indicatorColor = getColor(R.styleable.IndicatorProgressBar_indicatorColor, indicatorColor)
             recycle()
         }
+    }
+
+    @Synchronized
+    override fun onMeasure(widthMeasureSpec: Int, heightMeasureSpec: Int) {
+        super.onMeasure(widthMeasureSpec, heightMeasureSpec)
     }
 
     override fun onDraw(canvas: Canvas) {
@@ -112,41 +117,7 @@ class IndicatorProgressBar(context: Context, attrs: AttributeSet) : View(context
             progress = viewState.getFloat("progress", progress)
             viewState = viewState.getParcelable("superState")!!
         }
-
         super.onRestoreInstanceState(viewState)
     }
 
-    override fun performClick(): Boolean {
-        super.performClick()
-        return true
-    }
-
-    override fun onTouchEvent(event: MotionEvent): Boolean {
-        super.onTouchEvent(event)
-
-        Log.d(TAG, "x=${event.x} / ${width()} (${event.x / measuredWidth}%), y=${event.y}")
-        when (event.action) {
-            MotionEvent.ACTION_DOWN -> {
-                return updateProgress(event)
-            }
-            MotionEvent.ACTION_MOVE -> {
-                return updateProgress(event)
-            }
-            MotionEvent.ACTION_UP -> {
-                performClick()
-                return true
-            }
-        }
-        return false
-    }
-
-    private fun updateProgress(event: MotionEvent): Boolean {
-        // percent may be outside the range (0..1)
-        val percent = event.x / width()
-        val boundedPercent = min(max(percent, 0F), 1F) // not above 1
-        progress = boundedPercent
-
-        invalidate() // Make the view redraw itself
-        return true
-    }
 }
