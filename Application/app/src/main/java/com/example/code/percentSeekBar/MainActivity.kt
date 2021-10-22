@@ -28,19 +28,27 @@ class MainActivity : AppCompatActivity() {
         val sectionThreeVal = 40F
         val sectionFourVal = 10F
 
-        val numberOfDividers = 3 // (TotalBlocks-1)
+        val sectionDividerVal = 2F
 
-        val totalSpan = sectionOneVal+sectionTwoVal+sectionThreeVal+sectionFourVal
+        val numberOfSections = 4
+        val numberOfDividers = (numberOfSections-1)// (TotalBlocks-1)
+
+        val totalSpan = (sectionOneVal + sectionTwoVal + sectionThreeVal + sectionFourVal) + (numberOfDividers*sectionDividerVal)
 
         val segOneRange = getRangeInPercentage(input = sectionOneVal,max=totalSpan)
         val segTwoRange = getRangeInPercentage(input = sectionTwoVal,max=totalSpan)
         val segThreeRange = getRangeInPercentage(input = sectionThreeVal,max=totalSpan)
         val segFourRange = getRangeInPercentage(input = sectionFourVal,max=totalSpan)
 
+        val segDividerRange = getRangeInPercentage(input = sectionDividerVal,max=totalSpan)
+
         return arrayListOf(
             ProgressItem(segOneRange,R.color.red,false),
+            ProgressItem(segDividerRange,R.color.screen_background,true),
             ProgressItem(segTwoRange,R.color.blue,false),
+            ProgressItem(segDividerRange,R.color.screen_background,true),
             ProgressItem(segThreeRange,R.color.green,false),
+            ProgressItem(segDividerRange,R.color.screen_background,true),
             ProgressItem(segFourRange,R.color.yellow,false)
         )
     }
