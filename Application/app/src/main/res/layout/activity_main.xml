@@ -8,7 +8,7 @@
     android:background="@color/screen_background"
     tools:context=".segmentedSeekBar.MainActivity">
 
-    <com.example.code.percentSeekBar.PercentSeekBar
+    <com.example.code.PercentSeekBar
         android:id="@+id/percentSeekBar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"

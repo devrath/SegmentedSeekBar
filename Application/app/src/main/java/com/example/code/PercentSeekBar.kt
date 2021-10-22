@@ -1,4 +1,4 @@
-package com.example.code.percentSeekBar
+package com.example.code
 
 import android.content.Context
 import android.graphics.Canvas
@@ -39,6 +39,10 @@ class PercentSeekBar : AppCompatSeekBar {
                 var lastProgressX = 0
                 var progressItemRight: Int
 
+                val rulerTop = height / 1.9 - minimumHeight / 2
+                val rulerBottom = rulerTop/ 1.1 + minimumHeight /2
+
+
                 for (i in progressList.indices) {
 
                     val progressItem = progressList[i]
@@ -54,8 +58,8 @@ class PercentSeekBar : AppCompatSeekBar {
                         progressItemRight = seekBarWidth
                     }
 
-                    drawProgress(lastProgressX, thumboffset, progressItemRight, seekBarHeight,
-                        canvas, progressPaint)
+                    drawProgress(canvas, lastProgressX, rulerTop, progressItemRight,
+                        rulerBottom, progressPaint)
 
                     lastProgressX = progressItemRight
                 }
@@ -64,21 +68,24 @@ class PercentSeekBar : AppCompatSeekBar {
         }
     }
 
-    private fun drawProgress(lastProgressX: Int, thumboffset: Int, progressItemRight: Int,
-        seekBarHeight: Int, canvas: Canvas, progressPaint: Paint
+    private fun drawProgress(
+        canvas: Canvas, lastProgressX: Int, rulerTop: Double, progressItemRight: Int,
+        rulerBottom: Double, progressPaint: Paint
     ) {
-        val progressRect = Rect()
-        progressRect[lastProgressX, thumboffset / 2, progressItemRight] = seekBarHeight - thumboffset / 2
-        canvas.drawRect(progressRect, progressPaint)
+        canvas.drawRect(
+            lastProgressX.toFloat(), rulerTop.toFloat(), progressItemRight.toFloat(),
+            rulerBottom.toFloat(), progressPaint
+        )
     }
 
-    private fun currentProgressWidth(
-        progressItem: ProgressItem,
-        seekBarWidth: Int
+
+    private fun currentProgressWidth(progressItem: ProgressItem,
+                                     seekBarWidth: Int
     ) = (progressItem.progressItemPercentage * seekBarWidth / 100).toInt()
 
     private fun currentProgressPaint(color: Int): Paint {
         val currentPaint = Paint()
+        currentPaint.strokeWidth
         currentPaint.color= ContextCompat.getColor(context, color)
         return currentPaint
     }

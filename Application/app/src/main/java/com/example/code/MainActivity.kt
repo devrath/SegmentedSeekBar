@@ -1,11 +1,8 @@
-package com.example.code.percentSeekBar
+package com.example.code
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
-import com.example.code.R
-import com.example.code.percentSeekBar.PercentSeekBar
-import com.example.code.percentSeekBar.ProgressItem
 import java.util.ArrayList
 
 class MainActivity : AppCompatActivity() {
