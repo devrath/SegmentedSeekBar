@@ -1,4 +1,4 @@
-package com.example.code
+package com.example.code.percentSeekbar
 
 import android.content.Context
 import android.graphics.Canvas

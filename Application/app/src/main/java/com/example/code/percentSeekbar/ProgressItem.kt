@@ -1,4 +1,4 @@
-package com.example.code
+package com.example.code.percentSeekbar
 
 data class ProgressItem(
     var progressItemPercentage: Float = 0f,
