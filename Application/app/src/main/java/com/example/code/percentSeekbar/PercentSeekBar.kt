@@ -6,6 +6,7 @@ import android.graphics.Paint
 import android.util.AttributeSet
 import androidx.appcompat.widget.AppCompatSeekBar
 import androidx.core.content.ContextCompat
+import com.example.code.R
 import java.util.ArrayList
 import kotlin.jvm.Synchronized
 
