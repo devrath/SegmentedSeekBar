@@ -21,7 +21,7 @@ class CustomSeekModifiedActivity : AppCompatActivity() {
         indicatorProgressBar = findViewById(R.id.indicatorProgressBar)
         indicatorProgressBar.indicatorPositions = listOf(0.13F, 0.34F, 0.57F, 0.85F, 0.92F)
 
-        updateCurrentTime()
+        //updateCurrentTime()
 
         indicatorProgressBar.setOnClickListener {
             if (indicatorProgressBar.progress >= 1F) {

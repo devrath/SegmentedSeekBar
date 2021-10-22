@@ -14,12 +14,16 @@
     <com.example.code.customSeekBar.modified.IndicatorProgressBarModified
         android:id="@+id/indicatorProgressBar"
         android:layout_width="match_parent"
-        android:layout_height="25dp"
+        android:layout_height="wrap_content"
         android:foregroundGravity="center"
-        app:barColor="@color/gb_seek_bar_unplayed"
-        app:barHeight="12"
-        app:indicatorColor="@color/screen_background"
+        android:paddingLeft="0dp"
+        android:paddingRight="0dp"
         app:progress="0"
-        app:progressColor="@color/gb_seek_bar_played" />
+        app:barHeight="12"
+        android:progressBackgroundTint="@color/gb_seek_bar_unplayed"
+        android:progressTint="@color/gb_seek_bar_played"
+        android:secondaryProgressTint="@color/gb_seek_bar_buffer"
+        android:thumbTint="@color/gb_seek_bar_played"
+        />
 
 </LinearLayout>

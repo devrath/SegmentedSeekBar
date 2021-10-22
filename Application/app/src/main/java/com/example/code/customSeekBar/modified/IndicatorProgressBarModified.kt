@@ -15,8 +15,8 @@ class IndicatorProgressBarModified : AppCompatSeekBar {
 
     /******************** eee **********************************/
     private var barColor = ContextCompat.getColor(context, R.color.gb_seek_bar_unplayed)
-    private var barHeight = 25F
-    private var indicatorColor = ContextCompat.getColor(context, R.color.gb_seek_bar_played)
+    private var barHeight = 1F
+    private var indicatorColor = ContextCompat.getColor(context, R.color.screen_background)
     private var progressColor = ContextCompat.getColor(context, R.color.gb_seek_bar_played)
     private val paint = Paint()
 
@@ -33,7 +33,7 @@ class IndicatorProgressBarModified : AppCompatSeekBar {
             invalidate()
         }
 
-    fun initilize(attrs: AttributeSet?) {
+    private fun initilize(attrs: AttributeSet?) {
         paint.isAntiAlias = true
         setupAttributes(attrs)
     }
@@ -101,23 +101,6 @@ class IndicatorProgressBarModified : AppCompatSeekBar {
 
         val barRect = RectF(left, barTop, right, barBottom)
         canvas.drawRoundRect(barRect, 50F, 50F, paint)
-    }
-
-    override fun onSaveInstanceState(): Parcelable {
-        val bundle = Bundle()
-        bundle.putFloat("progress", progress)
-        bundle.putParcelable("superState", super.onSaveInstanceState())
-        return bundle
-    }
-
-    override fun onRestoreInstanceState(state: Parcelable) {
-        var viewState = state
-
-        if (viewState is Bundle) {
-            progress = viewState.getFloat("progress", progress)
-            viewState = viewState.getParcelable("superState")!!
-        }
-        super.onRestoreInstanceState(viewState)
     }
 
 }
