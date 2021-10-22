@@ -28,6 +28,8 @@ class MainActivity : AppCompatActivity() {
         val sectionThreeVal = 40F
         val sectionFourVal = 10F
 
+        val numberOfDividers = 3 // (TotalBlocks-1)
+
         val totalSpan = sectionOneVal+sectionTwoVal+sectionThreeVal+sectionFourVal
 
         val segOneRange = getRangeInPercentage(input = sectionOneVal,max=totalSpan)
@@ -36,10 +38,10 @@ class MainActivity : AppCompatActivity() {
         val segFourRange = getRangeInPercentage(input = sectionFourVal,max=totalSpan)
 
         return arrayListOf(
-            ProgressItem(segOneRange,R.color.red),
-            ProgressItem(segTwoRange,R.color.blue),
-            ProgressItem(segThreeRange,R.color.green),
-            ProgressItem(segFourRange,R.color.yellow)
+            ProgressItem(segOneRange,R.color.red,false),
+            ProgressItem(segTwoRange,R.color.blue,false),
+            ProgressItem(segThreeRange,R.color.green,false),
+            ProgressItem(segFourRange,R.color.yellow,false)
         )
     }
 
