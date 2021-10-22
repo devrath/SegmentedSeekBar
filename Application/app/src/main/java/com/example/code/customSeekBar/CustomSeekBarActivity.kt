@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
 import com.example.code.R
+import com.example.code.percentSeekBar.ProgressItem
 
 
 class CustomSeekBarActivity : AppCompatActivity() {

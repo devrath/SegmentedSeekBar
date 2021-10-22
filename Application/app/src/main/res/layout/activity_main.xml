@@ -8,28 +8,22 @@
     android:background="@color/screen_background"
     tools:context=".segmentedSeekBar.MainActivity">
 
-    <com.example.code.segmentedSeekBar.SeekBarFrame
-        android:id="@+id/seekbarFrame"
+    <com.example.code.percentSeekBar.PercentSeekBar
+        android:id="@+id/percentSeekBar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="@color/screen_background">
-        <androidx.appcompat.widget.AppCompatSeekBar
-            android:id="@+id/seek_bar"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:progress="50"
-            android:thumbOffset="0dp"
-            android:paddingStart="0dp"
-            android:paddingEnd="0dp"
-            android:progressBackgroundTint="@color/gb_seek_bar_unplayed"
-            android:progressTint="@color/gb_seek_bar_played"
-            android:secondaryProgressTint="@color/gb_seek_bar_buffer"
-            android:thumbTint="@color/gb_seek_bar_played"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
-    </com.example.code.segmentedSeekBar.SeekBarFrame>
+        android:progress="50"
+        android:thumbOffset="0dp"
+        android:paddingStart="0dp"
+        android:paddingEnd="0dp"
+        android:progressBackgroundTint="@color/gb_seek_bar_unplayed"
+        android:progressTint="@color/gb_seek_bar_played"
+        android:secondaryProgressTint="@color/gb_seek_bar_buffer"
+        android:thumbTint="@color/gb_seek_bar_played"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
 
 </androidx.appcompat.widget.LinearLayoutCompat>

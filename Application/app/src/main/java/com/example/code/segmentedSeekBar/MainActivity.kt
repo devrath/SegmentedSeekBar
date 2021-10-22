@@ -2,9 +2,11 @@ package com.example.code.segmentedSeekBar
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Log
 import android.view.View
 import androidx.appcompat.widget.AppCompatSeekBar
 import com.example.code.R
+import com.example.code.percentSeekBar.PercentSeekBar
 
 class MainActivity : AppCompatActivity() {
 
@@ -12,11 +14,11 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-        val seekBarFrame: SeekBarFrame = findViewById(R.id.seekbarFrame)
-        val progressBar: AppCompatSeekBar = findViewById<View>(R.id.seek_bar) as AppCompatSeekBar
-        seekBarFrame.setSectionDivider(prepareSections())
+        val progressBar: PercentSeekBar = findViewById(R.id.percentSeekBar)
+        //seekBarFrame.setSectionDivider(prepareSections())
 
 
+        Log.d("",prepareSections().toString())
     }
 
     private fun prepareSections(): List<SegmentFrame> {

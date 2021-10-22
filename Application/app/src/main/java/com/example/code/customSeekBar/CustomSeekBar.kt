@@ -6,6 +6,7 @@ import android.graphics.Paint
 import android.graphics.Rect
 import android.util.AttributeSet
 import androidx.appcompat.widget.AppCompatSeekBar
+import com.example.code.percentSeekBar.ProgressItem
 import java.util.ArrayList
 import kotlin.jvm.Synchronized
 
