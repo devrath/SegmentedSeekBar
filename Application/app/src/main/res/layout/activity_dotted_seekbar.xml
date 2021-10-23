@@ -9,7 +9,7 @@
     <com.example.code.dottedseekbar.DottedSeekBar
         android:id="@+id/videoProgress"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="10dp"
         android:progressBackgroundTint="@color/gb_seek_bar_unplayed"
         android:progressTint="@color/gb_seek_bar_played"
         android:secondaryProgressTint="@color/gb_seek_bar_buffer"

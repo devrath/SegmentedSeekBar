@@ -74,7 +74,8 @@ class IndicatorProgressBarModified : AppCompatSeekBar {
 
     private fun drawProgressBar(canvas: Canvas) {
         paint.color = barColor
-        drawCenteredBar(canvas, 0F, width())
+        //drawCenteredBar(canvas, 0F, width())
+        drawCenteredBar(canvas, 32F, width()-32)
     }
 
     private fun drawProgress(canvas: Canvas) {
