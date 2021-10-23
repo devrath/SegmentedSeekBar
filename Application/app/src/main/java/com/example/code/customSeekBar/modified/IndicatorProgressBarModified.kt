@@ -113,13 +113,14 @@ class IndicatorProgressBarModified : AppCompatSeekBar {
      * * 2 * Drawing the Indicator
      * * 3 * Drawing the progress for the progress bar
      */
-    private fun drawOnCanvas(canvas: Canvas, paint:Paint, left: Float, right: Float) {
+    private fun drawOnCanvas(canvas: Canvas, paint:Paint, progressLeft: Float, progressRight: Float) {
         //val barTop = (measuredHeight - barHeight) / 2
         //val barBottom = (measuredHeight + barHeight) / 2
-        val barTop = height / 1.8 - minimumHeight / 2
-        val barBottom = barTop / 1.3 + minimumHeight / 2
+        val progressTop = height / 1.8 - minimumHeight / 2
+        val progressBottom = progressTop / 1.3 + minimumHeight / 2
 
-        val barRect = RectF(left, barTop.toFloat(), right, barBottom.toFloat())
+        val barRect = RectF(progressLeft, progressTop.toFloat(),
+                            progressRight, progressBottom.toFloat())
         canvas.drawRoundRect(barRect, 50F, 50F, paint)
     }
 
