@@ -9,7 +9,7 @@
     <com.example.code.dottedseekbar.DottedSeekBar
         android:id="@+id/videoProgress"
         android:layout_width="match_parent"
-        android:layout_height="10dp"
+        android:layout_height="wrap_content"
         android:paddingStart="0dp"
         android:paddingEnd="0dp"/>
 

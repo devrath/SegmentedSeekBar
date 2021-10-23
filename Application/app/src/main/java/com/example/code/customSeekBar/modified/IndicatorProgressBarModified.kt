@@ -15,6 +15,7 @@ class IndicatorProgressBarModified : AppCompatSeekBar {
 
     companion object {
         const val DIVIDER_WIDTH = 5F
+        const val PROGRESS_LEFT_RIGHT_PADDING = 32F
     }
 
     // List of points for creating sections
@@ -72,7 +73,10 @@ class IndicatorProgressBarModified : AppCompatSeekBar {
     // Draw the progress bar
     private fun drawProgressBar(canvas: Canvas) {
         //drawCenteredBar(canvas, 0F, width())
-        drawOnCanvas(canvas, paintProgressBar,32F, width()-32)
+        drawOnCanvas(
+            canvas, paintProgressBar,PROGRESS_LEFT_RIGHT_PADDING,
+            width()-PROGRESS_LEFT_RIGHT_PADDING
+        )
     }
 
     // Draw the progress
