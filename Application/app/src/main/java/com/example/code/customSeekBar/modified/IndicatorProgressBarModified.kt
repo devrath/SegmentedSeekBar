@@ -4,8 +4,6 @@ import android.content.Context
 import android.graphics.Canvas
 import android.graphics.Paint
 import android.graphics.RectF
-import android.os.Bundle
-import android.os.Parcelable
 import android.util.AttributeSet
 import androidx.appcompat.widget.AppCompatSeekBar
 import androidx.core.content.ContextCompat
@@ -15,7 +13,6 @@ class IndicatorProgressBarModified : AppCompatSeekBar {
 
     /******************** eee **********************************/
     private var barColor = ContextCompat.getColor(context, R.color.gb_seek_bar_unplayed)
-    private var barHeight = 1F
     private var indicatorColor = ContextCompat.getColor(context, R.color.screen_background)
     private var progressColor = ContextCompat.getColor(context, R.color.gb_seek_bar_played)
     private val paint = Paint()
@@ -27,7 +24,7 @@ class IndicatorProgressBarModified : AppCompatSeekBar {
             : super(context!!, attrs, defStyle) { initilize(attrs) }
 
 
-    var progress = 0F // From float from 0 to 1
+    private var progress = 0F // From float from 0 to 1
         set(state) {
             field = state
             invalidate()
@@ -35,21 +32,6 @@ class IndicatorProgressBarModified : AppCompatSeekBar {
 
     private fun initilize(attrs: AttributeSet?) {
         paint.isAntiAlias = true
-        setupAttributes(attrs)
-    }
-
-    private fun setupAttributes(attrs: AttributeSet?) {
-        context.theme.obtainStyledAttributes(
-            attrs, R.styleable.IndicatorProgressBar,
-            0, 0
-        ).apply {
-            barColor = getColor(R.styleable.IndicatorProgressBar_barColor, barColor)
-            barHeight = getFloat(R.styleable.IndicatorProgressBar_barHeight, barHeight)
-            progress = getFloat(R.styleable.IndicatorProgressBar_progress, progress)
-            progressColor = getColor(R.styleable.IndicatorProgressBar_progressColor, progressColor)
-            indicatorColor = getColor(R.styleable.IndicatorProgressBar_indicatorColor, indicatorColor)
-            recycle()
-        }
     }
 
     @Synchronized
@@ -61,7 +43,7 @@ class IndicatorProgressBarModified : AppCompatSeekBar {
         super.onDraw(canvas)
         paint.style = Paint.Style.FILL // We will only use FILL for the progress bar's components.
         drawProgressBar(canvas)
-        drawProgress(canvas)
+        //drawProgress(canvas)
         drawIndicators(canvas)
     }
 
