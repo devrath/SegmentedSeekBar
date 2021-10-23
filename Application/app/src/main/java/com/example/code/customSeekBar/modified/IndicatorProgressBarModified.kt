@@ -88,18 +88,20 @@ class IndicatorProgressBarModified : AppCompatSeekBar {
         paint.color = indicatorColor
         indicatorPositions.forEach {
             val barPositionCenter = it * width()
-            val barPositionLeft = barPositionCenter - 3F
-            val barPositionRight = barPositionCenter + 3F
+            val barPositionLeft = barPositionCenter - 5F
+            val barPositionRight = barPositionCenter + 5F
 
             drawCenteredBar(canvas, barPositionLeft, barPositionRight)
         }
     }
 
     private fun drawCenteredBar(canvas: Canvas, left: Float, right: Float) {
-        val barTop = (measuredHeight - barHeight) / 2
-        val barBottom = (measuredHeight + barHeight) / 2
+        //val barTop = (measuredHeight - barHeight) / 2
+        //val barBottom = (measuredHeight + barHeight) / 2
+        val barTop = height / 1.8 - minimumHeight / 2
+        val barBottom = barTop / 1.3 + minimumHeight / 2
 
-        val barRect = RectF(left, barTop, right, barBottom)
+        val barRect = RectF(left, barTop.toFloat(), right, barBottom.toFloat())
         canvas.drawRoundRect(barRect, 50F, 50F, paint)
     }
 
