@@ -10,6 +10,8 @@
         android:id="@+id/videoProgress"
         android:layout_width="match_parent"
         android:layout_height="10dp"
+        android:paddingStart="0dp"
+        android:paddingEnd="0dp"
         android:background="@color/black"
         android:progressBackgroundTint="@color/gb_seek_bar_unplayed"
         android:progressTint="@color/gb_seek_bar_played"
