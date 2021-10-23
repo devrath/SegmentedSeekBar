@@ -18,7 +18,7 @@
         android:layout_height="25dp"
         android:layout_centerVertical="true"
         android:foregroundGravity="center"
-        app:barColor="@color/gb_seek_bar_unplayed"
+        app:barColor="@color/color_progress_bkg_tint"
         app:barHeight="12"
         app:indicatorColor="#ffffff"
         app:progress="0"

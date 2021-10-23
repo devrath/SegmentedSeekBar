@@ -103,7 +103,7 @@ class PercentSeekBar : AppCompatSeekBar {
             if(progressItem.isDivider){
                 currentPaint.color= ContextCompat.getColor(context, progressItem.color)
             }else{
-                currentPaint.color= ContextCompat.getColor(context, R.color.gb_seek_bar_played)
+                currentPaint.color= ContextCompat.getColor(context, R.color.color_thumb_tint)
             }
         }
         return currentPaint

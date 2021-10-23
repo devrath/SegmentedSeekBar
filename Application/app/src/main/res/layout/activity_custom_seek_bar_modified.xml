@@ -5,11 +5,20 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/screen_background"
+    android:orientation="vertical"
     android:gravity="center"
     android:paddingLeft="5dp"
     android:paddingTop="5dp"
     android:paddingRight="5dp"
     android:paddingBottom="5dp">
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        app:tint="@android:color/white"
+        app:srcCompat="@drawable/ic_youtube"
+        android:layout_marginBottom="30dp"/>
 
     <com.example.code.customSeekBar.modified.IndicatorProgressBarModified
         android:id="@+id/indicatorProgressBar"
@@ -20,10 +29,10 @@
         android:paddingRight="0dp"
         app:progress="0"
         app:barHeight="12"
-        android:progressBackgroundTint="@color/gb_seek_bar_unplayed"
-        android:progressTint="@color/gb_seek_bar_played"
-        android:secondaryProgressTint="@color/gb_seek_bar_buffer"
-        android:thumbTint="@color/gb_seek_bar_played"
+        android:progressBackgroundTint="@color/color_progress_bkg_tint"
+        android:progressTint="@color/color_thumb_tint"
+        android:secondaryProgressTint="@color/color_secondary_progress_tint"
+        android:thumbTint="@color/color_thumb_tint"
         />
 
 </LinearLayout>

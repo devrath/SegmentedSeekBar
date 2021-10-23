@@ -25,12 +25,12 @@ class IndicatorProgressBarModified : AppCompatSeekBar {
     private val paintProgressBar = Paint().apply {
         isAntiAlias = true
         style = Paint.Style.FILL
-        color = ContextCompat.getColor(context, R.color.gb_seek_bar_unplayed)
+        color = ContextCompat.getColor(context, R.color.color_progress_bkg_tint)
     }
     private val paintProgress = Paint().apply {
         isAntiAlias = true
         style = Paint.Style.FILL
-        color = ContextCompat.getColor(context, R.color.gb_seek_bar_played)
+        color = ContextCompat.getColor(context, R.color.color_thumb_tint)
     }
     private val paintIndicator = Paint().apply {
         isAntiAlias = true
