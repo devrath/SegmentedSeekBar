@@ -21,26 +21,7 @@ class CustomSeekModifiedActivity : AppCompatActivity() {
         indicatorProgressBar = findViewById(R.id.indicatorProgressBar)
         indicatorProgressBar.indicatorPositions = listOf(0.13F, 0.34F, 0.57F, 0.85F, 0.92F)
 
-        //updateCurrentTime()
-
-        indicatorProgressBar.setOnClickListener {
-            if (indicatorProgressBar.progress >= 1F) {
-                //updateCurrentTime()
-            }
-        }
     }
 
-    private fun updateCurrentTime() {
-        scope.launch {
-            while (indicatorProgressBar.progress <= 1F) {
-                Log.d(TAG, "In while loop")
-                delay(33)
-                runOnUiThread {
-                    indicatorProgressBar.progress += 0.003F
-                    Log.d(TAG, "Progress is now: ${indicatorProgressBar.progress}")
-                }
-            }
 
-        }
-    }
 }
