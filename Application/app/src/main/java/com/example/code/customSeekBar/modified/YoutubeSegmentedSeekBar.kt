@@ -11,7 +11,7 @@ import com.example.code.R
 
 enum class SeekbarElementType { PROGRESS_BAR, PROGRESS_INDICATOR, PROGRESS_DIVIDER }
 
-class IndicatorProgressBarModified : AppCompatSeekBar {
+class YoutubeSegmentedSeekBar : AppCompatSeekBar {
 
     companion object {
         const val DIVIDER_WIDTH = 5F
