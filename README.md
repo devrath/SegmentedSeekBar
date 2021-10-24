@@ -13,7 +13,7 @@ Full definition of how the segmentation of seekbar is implemented is demonstrate
 
 ### Output 
 <p align="center">
-  <img src="https://github.com/devrath/SegmentedSeekBar/blob/main/output/output.gif">
+  <img width=400 height=300 src="https://github.com/devrath/SegmentedSeekBar/blob/main/output/output.gif">
 </p>
 
 <p align="center">
