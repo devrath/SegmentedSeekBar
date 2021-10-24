@@ -6,34 +6,24 @@
     android:layout_height="match_parent"
     android:gravity="center"
     android:background="@color/screen_background"
-    tools:context=".segmentedSeekBar.MainActivity">
+    tools:context=".otherseekbars.percentSeekbar.MainActivity">
 
-    <androidx.appcompat.widget.AppCompatSeekBar
-        android:id="@+id/progress_bar_test"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:progressBackgroundTint="@color/gb_seek_bar_unplayed"
-        android:progressTint="@color/gb_seek_bar_played"
-        android:secondaryProgressTint="@color/gb_seek_bar_buffer"
-        android:thumbTint="@color/gb_seek_bar_played"
-        android:layout_marginLeft="16dp"
-        android:layout_marginRight="16dp"
-        android:visibility="gone"/>
-
-    <com.example.code.segmentedSeekBar.SegmentSeekBar
-        android:id="@+id/seek_bar"
-        style="@style/Widget.AppCompat.ProgressBar.Horizontal"
+    <com.example.code.otherseekbars.percentSeekbar.PercentSeekBar
+        android:id="@+id/percentSeekBar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:progress="50"
         android:thumbOffset="0dp"
-        android:progressBackgroundTint="@color/gb_seek_bar_unplayed"
-        android:progressTint="@color/gb_seek_bar_played"
-        android:secondaryProgressTint="@color/gb_seek_bar_buffer"
-        android:thumbTint="@color/gb_seek_bar_played"
+        android:paddingStart="0dp"
+        android:paddingEnd="0dp"
+        android:progressBackgroundTint="@color/color_progress_bkg_tint"
+        android:progressTint="@color/color_thumb_tint"
+        android:secondaryProgressTint="@color/color_secondary_progress_tint"
+        android:thumbTint="@color/color_thumb_tint"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
 
 </androidx.appcompat.widget.LinearLayoutCompat>

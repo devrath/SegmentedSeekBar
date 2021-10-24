@@ -1,18 +1,27 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:gravity="center">
+    android:background="#000000"
+    android:gravity="bottom"
+    android:paddingLeft="5dp"
+    android:paddingTop="5dp"
+    android:paddingRight="5dp"
+    android:paddingBottom="5dp"
+    tools:context=".MainActivity">
 
-    <com.example.code.customSeekBar.CustomSeekBar
-        android:id="@+id/customSeekBar"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:progressBackgroundTint="@color/gb_seek_bar_unplayed"
-        android:progressTint="@color/gb_seek_bar_played"
-        android:secondaryProgressTint="@color/gb_seek_bar_buffer"
-        android:thumbTint="@color/gb_seek_bar_played"
-        android:layout_marginLeft="16dp"
-        android:layout_marginRight="16dp"/>
+    <com.example.code.otherseekbars.customSeekBar.IndicatorProgressBar
+        android:id="@+id/indicatorProgressBar"
+        android:layout_width="wrap_content"
+        android:layout_height="25dp"
+        android:layout_centerVertical="true"
+        android:foregroundGravity="center"
+        app:barColor="@color/color_progress_bkg_tint"
+        app:barHeight="12"
+        app:indicatorColor="#ffffff"
+        app:progress="0"
+        app:progressColor="#11c011" />
 
-</LinearLayout>
+</RelativeLayout>
