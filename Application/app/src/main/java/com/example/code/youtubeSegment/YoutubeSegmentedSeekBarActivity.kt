@@ -1,4 +1,4 @@
-package com.example.code.customSeekBar.modified
+package com.example.code.youtubeSegment
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity

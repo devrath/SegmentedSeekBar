@@ -12,7 +12,7 @@
     android:paddingBottom="5dp"
     tools:context=".MainActivity">
 
-    <com.example.code.customSeekBar.normal.IndicatorProgressBar
+    <com.example.code.otherseekbars.customSeekBar.IndicatorProgressBar
         android:id="@+id/indicatorProgressBar"
         android:layout_width="wrap_content"
         android:layout_height="25dp"

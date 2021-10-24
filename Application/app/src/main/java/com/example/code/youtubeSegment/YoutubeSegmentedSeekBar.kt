@@ -1,4 +1,4 @@
-package com.example.code.customSeekBar.modified
+package com.example.code.youtubeSegment
 
 import android.content.Context
 import android.graphics.Canvas
@@ -64,9 +64,9 @@ class YoutubeSegmentedSeekBar : AppCompatSeekBar {
 
     override fun onDraw(canvas: Canvas) {
         super.onDraw(canvas)
-        performDraw(canvas,SeekbarElementType.PROGRESS_BAR)
+        performDraw(canvas, SeekbarElementType.PROGRESS_BAR)
         //performDraw(canvas,SeekbarElementType.PROGRESS_INDICATOR)
-        performDraw(canvas,SeekbarElementType.PROGRESS_DIVIDER)
+        performDraw(canvas, SeekbarElementType.PROGRESS_DIVIDER)
     }
 
     /** ************************ Draw progress bar elements ************************ **/
@@ -74,8 +74,8 @@ class YoutubeSegmentedSeekBar : AppCompatSeekBar {
     private fun drawProgressBar(canvas: Canvas) {
         //drawCenteredBar(canvas, 0F, width())
         drawOnCanvas(
-            canvas, paintProgressBar,PROGRESS_LEFT_RIGHT_PADDING,
-            width()-PROGRESS_LEFT_RIGHT_PADDING
+            canvas, paintProgressBar, PROGRESS_LEFT_RIGHT_PADDING,
+            width()- PROGRESS_LEFT_RIGHT_PADDING
         )
     }
 

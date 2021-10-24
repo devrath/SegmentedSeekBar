@@ -1,9 +1,8 @@
-package com.example.code.dottedseekbar
+package com.example.code.otherseekbars.dottedseekbar
 
 import android.content.Context
 import androidx.appcompat.widget.AppCompatSeekBar
 import android.graphics.Bitmap
-import android.content.res.TypedArray
 import com.example.code.R
 import android.graphics.BitmapFactory
 import android.graphics.Canvas

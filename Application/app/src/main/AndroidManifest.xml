@@ -10,7 +10,7 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Code">
         <activity
-            android:name=".customSeekBar.modified.YoutubeSegmentedSeekBarActivity"
+            android:name=".youtubeSegment.YoutubeSegmentedSeekBarActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

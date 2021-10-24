@@ -6,9 +6,9 @@
     android:layout_height="match_parent"
     android:gravity="center"
     android:background="@color/screen_background"
-    tools:context=".percentSeekbar.MainActivity">
+    tools:context=".otherseekbars.percentSeekbar.MainActivity">
 
-    <com.example.code.percentSeekbar.PercentSeekBar
+    <com.example.code.otherseekbars.percentSeekbar.PercentSeekBar
         android:id="@+id/percentSeekBar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"

@@ -1,4 +1,4 @@
-package com.example.code.percentSeekbar
+package com.example.code.otherseekbars.percentSeekbar
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle

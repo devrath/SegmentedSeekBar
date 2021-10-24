@@ -1,4 +1,4 @@
-package com.example.code.dottedseekbar
+package com.example.code.otherseekbars.dottedseekbar
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle

@@ -1,4 +1,4 @@
-package com.example.code.customSeekBar.normal
+package com.example.code.otherseekbars.customSeekBar
 
 import android.os.Bundle
 import android.util.Log
